@@ -1,0 +1,50 @@
+body {
+    background-color: aliceblue;
+    margin: auto;
+    text-align: center;
+    font-size: 4em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.check {
+
+    padding: 1rem 2.8rem;
+    font-size: 1.8rem;
+    letter-spacing: .1rem
+}
+
+
+.btn input{
+    padding: 1rem 2.8rem;
+    font-size: large;
+
+}
+
+
+.functionality input {
+
+    width: 300px;
+    height: 44px;
+    margin-right: 9px;
+    display: inline-block;
+    min-width: 30px;
+    font-size: xx-large;
+}
+
+.functionality label {
+    display: inline-block;
+    font-size: 2rem;
+    margin-left: 5px;
+    width: 5%;
+    min-width: 60px;
+}
+
+.functionality span {
+    display: inline-table;
+    font-size: 2rem;
+    margin-left: 3px;
+
+}
