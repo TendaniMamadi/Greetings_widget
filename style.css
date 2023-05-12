@@ -31,7 +31,7 @@ h1 {
     margin-right: 9px;
     display: inline-block;
     min-width: 30px;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 .functionality label {
@@ -47,4 +47,8 @@ h1 {
     font-size: 2rem;
     margin-left: 3px;
 
+}
+
+.orange {
+    color: orange;
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="greetings.js" defer></script>
 
 </head>
 <body>
@@ -20,22 +21,22 @@
         <div class="functionality">
             <form>
                 <label for="NAME">Name:</label>
-                <input type="text"> 
-                <span>0</span>
+                <input type="text" class="textBox"> 
+                <span class="count">0</span>
                 <br>
             </form>
         </div>
 
         <div class="check">
-            <input type="radio" name="English" id="Language" value="Eng">
+            <input type="radio" name="Language"  value="Eng">
 
             <label for="English">English</label>
 
-            <input type="radio" name="Spanish" id="Language" value="Esp">
+            <input type="radio" name="Language"  value="Esp">
 
             <label for="Spanish">Spanish</label>
 
-            <input type="radio" name="Tshivenda" id="Language" value="Ven">
+            <input type="radio" name="Language"  value="Ven">
 
             <label for="TshiVenda">TshiVenda</label>
 
@@ -43,8 +44,8 @@
 
         <div class="btn">
 
-            <input type="button" value="Greet Me">
-            <input type="button" value="Clear">
+            <input type="button" value="Greet Me" class="greetings">
+            <input type="button" value="Clear" class="clearing">
 
 
         </div>
