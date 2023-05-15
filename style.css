@@ -2,7 +2,7 @@ body {
     background-color: aliceblue;
     margin: auto;
     text-align: center;
-    font-size: 4em;
+    font-size: 3.9em;
 }
 
 h1 {
@@ -51,4 +51,8 @@ h1 {
 
 .orange {
     color: orange;
+}
+
+.red {
+    color: red;
 }
