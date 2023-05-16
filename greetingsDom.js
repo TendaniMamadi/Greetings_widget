@@ -3,12 +3,10 @@ var span = document.querySelector(".count");
 var paragraph = document.querySelector('.message');
 var greetBtn = document.querySelector(".greetings");
 var clearBtn = document.querySelector(".clearing");
-// var error = document.querySelector(".Error")
 var greetedNames = JSON.parse(localStorage.getItem("nameList")) //retrieving names from server
 const greet = Greetings(greetedNames);
 
 
-// var namesGreeted = greetedNames || [];//pushing new names in an array
 span.innerHTML = greet.counter();//checking greeted names
 
 greetBtn.addEventListener('click', function () {
@@ -19,58 +17,48 @@ greetBtn.addEventListener('click', function () {
     if (inputType.value != "" && radioBtn) {
 
         paragraph.innerHTML = greet.greetings1(inputType.value, radioBtn.value)
-        // if (radioBtn.value == "Eng") {
-        //     paragraph.innerHTML = "Hello!" + " " + inputType.value
-        // }
 
-        // if (radioBtn.value == "Esp") {
-        //     paragraph.innerHTML = "Ola!" + " " + inputType.value
-        // }
-
-        // if (radioBtn.value == "Ven") {
-        //     paragraph.innerHTML = "Ndaa!" + " " + inputType.value
-        // }
-        // if (namesGreeted.includes(inputType.value) === false) {
-
-        //     namesGreeted.push(inputType.value);
-        // } else {
-        //     paragraph.classList.add("orange")
-        //     paragraph.innerHTML = "name already exists!"
-        // }
+        setTimeout( ()=> {
+            inputType.value = '';
+            paragraph.innerHTML = ''
+            
+        },3000 )
+       
         localStorage.setItem("nameList", JSON.stringify(greet.getArray()))//this is to convert our array to string and storing data in our local storage
         span.innerHTML = greet.counter();// memorises the name
 
+
+    } else if (inputType.value === "" || radioBtn === null) {
+        add_error_message()
     }
+
+
 
     //error messages
+    function add_error_message() {
 
-    if (radioBtn == null) {
-        paragraph.classList.add("red")
-        paragraph.innerHTML = "Please select language!";
-    }
-    if (inputType.value === "") {
-        paragraph.classList.add("red")
+        if (radioBtn == null) {
+            paragraph.classList.add("red")
 
-        if (radioBtn.value == "Eng") {
-            paragraph.innerHTML = "Please enter your name!"
+            paragraph.innerHTML = greet.errorMessage(radioBtn);
+        }
+        if (inputType.value === "") {
+            paragraph.classList.add("red")
+
+            paragraph.innerHTML = greet.errorMessage(radioBtn)
         }
 
-        if (radioBtn.value == "Esp") {
-            paragraph.innerHTML = "Introduzca su nombre"
-        }
-
-        if (radioBtn.value == "Ven") {
-            paragraph.innerHTML = "Dzhenisani dzina!"
-
-        }
+        setTimeout( ()=> {
+            paragraph.innerHTML = ''
+            
+        },2000) 
 
     }
+
+
+
+
 });
-
-
-
-
-
 
 
 

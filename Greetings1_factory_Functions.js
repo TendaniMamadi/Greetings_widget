@@ -1,38 +1,41 @@
 function Greetings(list) {
     var namesGreeted = list || [];
-    
+
 
 
     function greetings1(name, language) {
-        greeted(name);
-
-        if (language == "Eng") {
-            return "Hello!" + " "+name
+        if (greeted(name)) {
+            if (language == "Eng") {
+                return "Hello!" + " " + name
+            }
+    
+            if (language == "Esp") {
+                return "Ola!" + " " + name
+            }
+    
+            if (language == "Ven") {
+                return "Ndaa!" + " " + name
+            }
         }
-
-        if (language == "Esp") {
-            return "Ola!" + " " +name
-        }
-
-        if (language == "Ven") {
-            return "Ndaa!" + " " +name
+        else {
+            return "name already exists!"
         }
 
     }
 
-    function greeted(name){
+    function greeted(name) {
 
         if (namesGreeted.includes(name) === false) {
 
             namesGreeted.push(name);
-        } else {
-           
-            return  "name already exists!"
-        }
-    } 
+            return true
+
+        } 
+      
+    }
 
 
-    function getArray(){
+    function getArray() {
         return namesGreeted
     }
 
@@ -40,34 +43,34 @@ function Greetings(list) {
     function counter() {
 
         return namesGreeted.length
-       
+
     }
 
-    function errorMessage() {
+    function errorMessage(radioBtn, inputType) {
 
-        if (radioBtn == null) {
-           
-            return "Please select languange!";
-        }
+        if (!radioBtn) {
 
-        if (inputType.value === "") {
-            paragraph.classList.add("red")
+            return "Please select language!";
 
-            if (radioBtn.value == "Eng") {
-                paragraph.innerHTML = "Please enter your name!"
-            }
+        } else if (!inputType) {
 
-            if (radioBtn.value == "Esp") {
-                paragraph.innerHTML = "Introduzca su nombre"
-            }
 
-            if (radioBtn.value == "Ven") {
-                paragraph.innerHTML = "Dzhenisani dzina"
+            if (radioBtn.value === "Eng") {
+                return "Please enter your name!"
+
+            } else if (radioBtn.value === "Esp") {
+                return "Introduzca su nombre!"
+
+            } else if
+                (radioBtn.value === "Ven") {
+                return "Dzhenisani dzina!"
 
             }
 
         }
+
     }
+
 
 
 
