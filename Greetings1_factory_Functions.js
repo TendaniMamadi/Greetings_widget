@@ -1,7 +1,6 @@
 function Greetings(list) {
     var namesGreeted = list || [];
-
-
+    let regex = /^[a-zA-Z]+$/ ;
 
     function greetings1(name, language) {
         if (greeted(name)) {
@@ -23,6 +22,10 @@ function Greetings(list) {
 
     }
 
+    function validateName(nameInput){
+        return  regex.test(nameInput) ;  // this will return either true or false 
+    }
+
     function greeted(name) {
 
         if (namesGreeted.includes(name) === false) {
@@ -33,7 +36,6 @@ function Greetings(list) {
         }
 
     }
-
 
     function getArray() {
         return namesGreeted
@@ -47,18 +49,20 @@ function Greetings(list) {
     }
 
     function errorMessage(radioBtn, inputType) {
-        
+
+
         if (!inputType && !radioBtn) {
 
-            return "Please enter your name & select language";
+            return "Please enter your name & select language!";
 
         }
 
-        else if (inputType && !radioBtn) {
 
+        if (!radioBtn) {
             return "Please select language!";
+
         }
-    
+
         else if (!inputType) {
 
             if (radioBtn.value === "Eng") {
@@ -74,12 +78,9 @@ function Greetings(list) {
             }
 
         }
+
+
     }
-
-  
-        
-
-
 
     return {
         greetings1,
@@ -87,6 +88,6 @@ function Greetings(list) {
         getArray,
         counter,
         errorMessage,
-       
+        validateName,
     }
 }

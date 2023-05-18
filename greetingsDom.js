@@ -26,47 +26,19 @@ greetBtn.addEventListener('click', function () {
         }, 3000)
 
         localStorage.setItem("nameList", JSON.stringify(greet.getArray()))//this is to convert our array to string and storing data in our local storage
+        paragraph.classList.add("red")
         span.innerHTML = greet.counter();// memorises the name
 
 
-    } else if (inputType.value === "" || radioBtn === null) {
-        add_error_Message()
-    }
-
-
-
-    //error messages
-    function add_error_Message() {
-        
-        if (radioBtn === null && inputType.value === "") {
-            paragraph.classList.add("red")
-
-            paragraph.innerHTML = greet.errorMessage(radioBtn);
-        }
-
-        if (radioBtn === null) {
-            paragraph.classList.add("red")
-
-            paragraph.innerHTML = greet.errorMessage(radioBtn);
-        }
-        
-
-        if (inputType.value === "") {
-            paragraph.classList.add("red")
-
-            paragraph.innerHTML = greet.errorMessage(radioBtn)
-        }
-
-
+    } else {
+        paragraph.classList.add("red")
+        paragraph.innerHTML = greet.errorMessage(radioBtn, inputType.value);
         setTimeout(() => {
             paragraph.innerHTML = ''
 
-        }, 2000)
+        }, 5000)
 
     }
-
-
-
 
 });
 
@@ -74,6 +46,13 @@ greetBtn.addEventListener('click', function () {
 
 clearBtn.addEventListener('click', function () {
     localStorage.clear();
+    paragraph.classList.add("green")
+    paragraph.innerHTML = "successfully cleared!"
+    setTimeout(() => {
+        paragraph.innerHTML = ''
+
+    }, 5000)
     location.reload()
+
 
 });

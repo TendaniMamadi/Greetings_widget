@@ -57,7 +57,9 @@ h1 {
     color: red;
 }
 
-
+.green {
+color: green;
+}
 
 @media(max-width:900px){
     body {
