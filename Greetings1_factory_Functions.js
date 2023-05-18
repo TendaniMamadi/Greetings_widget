@@ -8,11 +8,11 @@ function Greetings(list) {
             if (language == "Eng") {
                 return "Hello!" + " " + name
             }
-    
+
             if (language == "Esp") {
                 return "Ola!" + " " + name
             }
-    
+
             if (language == "Ven") {
                 return "Ndaa!" + " " + name
             }
@@ -30,8 +30,8 @@ function Greetings(list) {
             namesGreeted.push(name);
             return true
 
-        } 
-      
+        }
+
     }
 
 
@@ -47,13 +47,19 @@ function Greetings(list) {
     }
 
     function errorMessage(radioBtn, inputType) {
+        
+        if (!inputType && !radioBtn) {
 
-        if (!radioBtn) {
+            return "Please enter your name & select language";
+
+        }
+
+        else if (inputType && !radioBtn) {
 
             return "Please select language!";
-
-        } else if (!inputType) {
-
+        }
+    
+        else if (!inputType) {
 
             if (radioBtn.value === "Eng") {
                 return "Please enter your name!"
@@ -68,9 +74,10 @@ function Greetings(list) {
             }
 
         }
-
     }
 
+  
+        
 
 
 
@@ -79,6 +86,7 @@ function Greetings(list) {
         greeted,
         getArray,
         counter,
-        errorMessage
+        errorMessage,
+       
     }
 }

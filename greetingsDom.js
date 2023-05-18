@@ -14,44 +14,54 @@ greetBtn.addEventListener('click', function () {
     paragraph.classList.remove("red")
 
     var radioBtn = document.querySelector('input[name="Language"]:checked');
+
     if (inputType.value != "" && radioBtn) {
 
         paragraph.innerHTML = greet.greetings1(inputType.value, radioBtn.value)
 
-        setTimeout( ()=> {
+        setTimeout(() => {
             inputType.value = '';
             paragraph.innerHTML = ''
-            
-        },3000 )
-       
+
+        }, 3000)
+
         localStorage.setItem("nameList", JSON.stringify(greet.getArray()))//this is to convert our array to string and storing data in our local storage
         span.innerHTML = greet.counter();// memorises the name
 
 
     } else if (inputType.value === "" || radioBtn === null) {
-        add_error_message()
+        add_error_Message()
     }
 
 
 
     //error messages
-    function add_error_message() {
-
-        if (radioBtn == null) {
+    function add_error_Message() {
+        
+        if (radioBtn === null && inputType.value === "") {
             paragraph.classList.add("red")
 
             paragraph.innerHTML = greet.errorMessage(radioBtn);
         }
+
+        if (radioBtn === null) {
+            paragraph.classList.add("red")
+
+            paragraph.innerHTML = greet.errorMessage(radioBtn);
+        }
+        
+
         if (inputType.value === "") {
             paragraph.classList.add("red")
 
             paragraph.innerHTML = greet.errorMessage(radioBtn)
         }
 
-        setTimeout( ()=> {
+
+        setTimeout(() => {
             paragraph.innerHTML = ''
-            
-        },2000) 
+
+        }, 2000)
 
     }
 
