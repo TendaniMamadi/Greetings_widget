@@ -1,41 +1,48 @@
 function Greetings(list) {
     var namesGreeted = list || [];
-    let regex = /^[a-zA-Z]+$/ ;
+
+    let regex = /^[A-Za-z\D\s]/g;
 
     function greetings1(name, language) {
-        if (greeted(name)) {
-            if (language == "Eng") {
-                return "Hello!" + " " + name
-            }
 
-            if (language == "Esp") {
-                return "Ola!" + " " + name
-            }
+        if (regex.test(name)) {
 
-            if (language == "Ven") {
-                return "Ndaa!" + " " + name
+            if (greeted(name)) {
+                if (language == "Eng") {
+                    return "Hello!" + " " + name
+                }
+
+                if (language == "Esp") {
+                    return "Ola!" + " " + name
+                }
+
+                if (language == "Ven") {
+                    return "Ndaa!" + " " + name
+                }
+            }
+            else {
+                return "name already exists!"
             }
         }
         else {
-            return "name already exists!"
+            return "no characters allowed!"
         }
 
     }
 
-    function validateName(nameInput){
-        return  regex.test(nameInput) ;  // this will return either true or false 
-    }
 
-    function greeted(name) {
 
-        if (namesGreeted.includes(name) === false) {
+    function greeted(nameGreet) {
 
-            namesGreeted.push(name);
+        var nameGreet = nameGreet.charAt(0).toUpperCase() + nameGreet.slice(1);
+        if (namesGreeted.includes(nameGreet) === false) {
+
+            namesGreeted.push(nameGreet);
             return true
 
         }
-
     }
+
 
     function getArray() {
         return namesGreeted
@@ -82,12 +89,15 @@ function Greetings(list) {
 
     }
 
+
+
     return {
         greetings1,
         greeted,
         getArray,
         counter,
         errorMessage,
-        validateName,
+        
     }
+
 }

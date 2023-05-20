@@ -61,7 +61,7 @@ h1 {
 color: green;
 }
 
-@media(max-width:900px){
+@media(max-width:1080px){
     body {
         background-color: aliceblue;
         margin: auto;

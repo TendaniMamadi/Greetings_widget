@@ -40,19 +40,24 @@ greetBtn.addEventListener('click', function () {
 
     }
 
+
 });
 
 
 
 clearBtn.addEventListener('click', function () {
     localStorage.clear();
-    paragraph.classList.add("green")
-    paragraph.innerHTML = "successfully cleared!"
+    span.innerHTML = 0;
     setTimeout(() => {
         paragraph.innerHTML = ''
+        location.reload()
 
-    }, 5000)
-    location.reload()
-
+    }, 3000)
+    paragraph.classList.add("green")
+    paragraph.innerHTML = "successfully cleared!"
+    
+    
 
 });
+
+
