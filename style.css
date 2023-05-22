@@ -1,23 +1,35 @@
 body {
     background-color: aliceblue;
-    margin: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
     text-align: center;
-    font-size: 3.9em;
 }
 
 h1 {
     text-align: center;
+    font-size: 3rem
 }
 
 .check {
 
-    padding: 1rem 2.8rem;
-    font-size: 1.8rem;
-    letter-spacing: .1rem
+    margin: 3rem 0rem 3rem 0rem;
+    font-size: 1.4rem;
+
+}
+.Error {
+    font-size: x-large;
 }
 
 
-.btn input{
+.btn input {
     padding: 1rem 2.8rem;
     font-size: large;
 
@@ -26,20 +38,16 @@ h1 {
 
 .functionality input {
 
-    width: 300px;
     height: 44px;
-    margin-right: 9px;
+    margin-left: 5px;
     display: inline-block;
-    min-width: 30px;
     font-size: x-large;
 }
 
 .functionality label {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-left: 5px;
-    width: 5%;
-    min-width: 60px;
 }
 
 .functionality span {
@@ -58,66 +66,5 @@ h1 {
 }
 
 .green {
-color: green;
-}
-
-@media(max-width:1080px){
-    body {
-        background-color: aliceblue;
-        margin: auto;
-        text-align: center;
-        font-size: 3.9em;
-    }
-    
-    h1 {
-        text-align: center;
-    }
-    
-    .check {
-    
-        padding: 1rem 2.8rem;
-        font-size: 1.8rem;
-        letter-spacing: .1rem
-    }
-    
-    
-    .btn input{
-        padding: 1rem 2.8rem;
-        font-size: large;
-    
-    }
-    
-    
-    .functionality input {
-    
-        width: 300px;
-        height: 44px;
-        margin-right: 9px;
-        display: inline-block;
-        min-width: 30px;
-        font-size: x-large;
-    }
-    
-    .functionality label {
-        display: inline-block;
-        font-size: 2rem;
-        margin-left: 5px;
-        width: 5%;
-        min-width: 60px;
-    }
-    
-    .functionality span {
-        display: inline-table;
-        font-size: 2rem;
-        margin-left: 3px;
-    
-    }
-    
-    .orange {
-        color: orange;
-    }
-    
-    .red {
-        color: red;
-    }
+    color: green;
 }

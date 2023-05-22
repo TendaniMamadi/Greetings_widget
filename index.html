@@ -1,67 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
     <script src="Greetings1_factory_Functions.js"></script>
-    <script src="greetingsDom.js" defer = 'true'></script>
+    <script src="greetingsDom.js" defer='true'></script>
 
 
 </head>
+
 <body>
+    <div class="container-fluid">
+        <section class="Top">
 
-    <section class="Top">
-        
-        <div class="heading">
-            <h1>Greetings</h1>
+            <div class="heading">
+                <h1>Greetings</h1>
+            </div>
+        </section>
+
+        <div class="Error">
+
+            <p class="message"></p>
+
         </div>
-    </section>
 
-    <div class="Error">
+        <section class="middle">
+            <div class="functionality">
+                <form>
+                    <label for="nameInput">Name:</label>
+                    <input id="nameInput" type="text" class="textBox" placeholder="Enter your name">
+                    
+                    <br>
+                </form>
+            </div>
 
-        <p class="message"></p>
+             <h5 style="margin-top: 1.5rem;color: gray;" > Number of Greetings : <span style="color:rgb(26, 26, 26);font-size: 1.6rem;" class="count" >0</span>  </h5>
+
+            <div class="row check">
+                <div class="col-sm-4">
+                    <input type="radio" name="Language" value="Eng">
+
+                    <label for="English">English</label>
+                </div>
+                <div class="col-sm-4">
+                    <input type="radio" name="Language" value="Esp">
+
+                <label for="Spanish">Spanish</label>
+                </div>
+                <div class="col-sm-4">
+                    <input type="radio" name="Language" value="Ven">
+
+                <label for="TshiVenda">TshiVenda</label>
+                </div>
+                
+
+            </div>
+
+            <div class="btn">
+
+                <input type="button" value="Greet Me" class=" btn btn-primary btn-sm greetings">
+                &nbsp;&nbsp;
+                <input type="button" value="Clear" class=" btn btn-primary btn-sm clearing">
+                &nbsp;&nbsp;
+
+
+            </div>
+
+
+
+        </section>
 
     </div>
 
-    <section class="middle">
-        <div class="functionality">
-            <form>
-                <label for="NAME" >Name:</label>
-                <input type="text" class="textBox" placeholder="Enter your name"> 
-                <span class="count">0</span>
-                <br>
-            </form>
-        </div>
-
-        <div class="check">
-            <input type="radio" name="Language"  value="Eng">
-
-            <label for="English">English</label>
-
-            <input type="radio" name="Language"  value="Esp">
-
-            <label for="Spanish">Spanish</label>
-
-            <input type="radio" name="Language"  value="Ven">
-
-            <label for="TshiVenda">TshiVenda</label>
-
-        </div>
-
-        <div class="btn">
-
-            <input type="button" value="Greet Me" class="greetings">
-            <input type="button" value="Clear" class="clearing">
 
 
-        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-
-
-    </section>
-    
 </body>
+
 </html>

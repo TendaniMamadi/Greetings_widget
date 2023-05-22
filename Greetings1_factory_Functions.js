@@ -1,22 +1,24 @@
 function Greetings(list) {
     var namesGreeted = list || [];
+    let clearMsg = "";
+   
 
-    let regex = /^[A-Za-z\D\s]/g;
+    let regex = /^[a-zA-Z]+$/;
 
     function greetings1(name, language) {
 
         if (regex.test(name)) {
 
             if (greeted(name)) {
-                if (language == "Eng") {
+                if (language === "Eng") {
                     return "Hello!" + " " + name
                 }
 
-                if (language == "Esp") {
+                if (language === "Esp") {
                     return "Ola!" + " " + name
                 }
 
-                if (language == "Ven") {
+                if (language === "Ven") {
                     return "Ndaa!" + " " + name
                 }
             }
@@ -25,7 +27,7 @@ function Greetings(list) {
             }
         }
         else {
-            return "no characters allowed!"
+            return "no numbers & characters allowed!"
         }
 
     }
@@ -41,6 +43,7 @@ function Greetings(list) {
             return true
 
         }
+   
     }
 
 
@@ -57,6 +60,7 @@ function Greetings(list) {
 
     function errorMessage(radioBtn, inputType) {
 
+      
 
         if (!inputType && !radioBtn) {
 
@@ -72,14 +76,14 @@ function Greetings(list) {
 
         else if (!inputType) {
 
-            if (radioBtn.value === "Eng") {
+            if (radioBtn === "Eng") {
                 return "Please enter your name!"
 
-            } else if (radioBtn.value === "Esp") {
+            } else if (radioBtn === "Esp") {
                 return "Introduzca su nombre!"
 
             } else if
-                (radioBtn.value === "Ven") {
+                (radioBtn === "Ven") {
                 return "Dzhenisani dzina!"
 
             }
@@ -89,6 +93,24 @@ function Greetings(list) {
 
     }
 
+    function clearButton(){
+        namesGreeted.length = 0
+    }
+
+    function getClearButton (){
+        return namesGreeted.length
+    }
+
+
+    function setClearMsg(){
+        clearMsg = "Successfully cleared!"
+    }
+
+    function getClearMsg(){
+        return clearMsg
+    }
+
+
 
 
     return {
@@ -97,6 +119,10 @@ function Greetings(list) {
         getArray,
         counter,
         errorMessage,
+        clearButton,
+        getClearButton,
+        setClearMsg,
+        getClearMsg
         
     }
 

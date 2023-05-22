@@ -4,39 +4,44 @@ var paragraph = document.querySelector('.message');
 var greetBtn = document.querySelector(".greetings");
 var clearBtn = document.querySelector(".clearing");
 var greetedNames = JSON.parse(localStorage.getItem("nameList")) //retrieving names from server
+
 const greet = Greetings(greetedNames);
+
 
 
 span.innerHTML = greet.counter();//checking greeted names
 
 greetBtn.addEventListener('click', function () {
-    paragraph.classList.remove("orange")
     paragraph.classList.remove("red")
 
     var radioBtn = document.querySelector('input[name="Language"]:checked');
 
+    if(radioBtn){
+       var RadioButton_value = radioBtn.value
+    }
+
     if (inputType.value != "" && radioBtn) {
 
-        paragraph.innerHTML = greet.greetings1(inputType.value, radioBtn.value)
+        paragraph.innerHTML = greet.greetings1(inputType.value, RadioButton_value )
 
         setTimeout(() => {
             inputType.value = '';
             paragraph.innerHTML = ''
 
-        }, 3000)
+        }, 2500)
 
         localStorage.setItem("nameList", JSON.stringify(greet.getArray()))//this is to convert our array to string and storing data in our local storage
-        paragraph.classList.add("red")
+        paragraph.classList.add("orange")
         span.innerHTML = greet.counter();// memorises the name
 
 
     } else {
         paragraph.classList.add("red")
-        paragraph.innerHTML = greet.errorMessage(radioBtn, inputType.value);
+        paragraph.innerHTML = greet.errorMessage(RadioButton_value , inputType.value);
         setTimeout(() => {
             paragraph.innerHTML = ''
 
-        }, 5000)
+        }, 2000)
 
     }
 
@@ -46,15 +51,17 @@ greetBtn.addEventListener('click', function () {
 
 
 clearBtn.addEventListener('click', function () {
+
     localStorage.clear();
-    span.innerHTML = 0;
+    span.innerHTML = greet.getClearButton();
     setTimeout(() => {
         paragraph.innerHTML = ''
         location.reload()
 
-    }, 3000)
+    }, 2000)
     paragraph.classList.add("green")
-    paragraph.innerHTML = "successfully cleared!"
+    greet.setClearMsg();
+    paragraph.innerHTML = greet.getClearMsg();
     
     
 
