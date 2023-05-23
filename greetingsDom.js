@@ -26,7 +26,7 @@ greetBtn.addEventListener('click', function () {
 
         setTimeout(() => {
             inputType.value = '';
-            paragraph.innerHTML = ''
+           
 
         }, 2500)
 
