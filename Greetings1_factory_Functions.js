@@ -36,7 +36,9 @@ function Greetings(list) {
 
     function greeted(nameGreet) {
 
-        var nameGreet = nameGreet.charAt(0).toUpperCase() + nameGreet.slice(1);
+        // var nameGreet = nameGreet.charAt(0).toUpperCase() + nameGreet.slice(1);
+        nameGreet = nameGreet.toLowerCase();
+
         if (namesGreeted.includes(nameGreet) === false) {
 
             namesGreeted.push(nameGreet);
