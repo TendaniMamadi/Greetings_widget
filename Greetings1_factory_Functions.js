@@ -3,7 +3,7 @@ function Greetings(list) {
     let clearMsg = "";
    
 
-    let regex = /^[a-zA-Z]+$/;
+    let regex = /^[A-Za-z]+$/;
 
     function greetings1(name, language) {
 
