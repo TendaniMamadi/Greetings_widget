@@ -1,25 +1,27 @@
 function Greetings(list) {
     var namesGreeted = list || [];
     let clearMsg = "";
-   
+
 
     let regex = /^[A-Za-z]+$/;
 
     function greetings1(name, language) {
 
-        if (regex.test(name)) {
+        var preparedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 
-            if (greeted(name)) {
+        if (regex.test(preparedName)) {
+
+            if (greeted(preparedName)) {
                 if (language === "Eng") {
-                    return "Hello!" + " " + name
+                    return "Hello!" + " " + preparedName
                 }
 
                 if (language === "Esp") {
-                    return "Ola!" + " " + name
+                    return "Ola!" + " " + preparedName
                 }
 
                 if (language === "Ven") {
-                    return "Ndaa!" + " " + name
+                    return "Ndaa!" + " " + preparedName
                 }
             }
             else {
@@ -36,16 +38,15 @@ function Greetings(list) {
 
     function greeted(nameGreet) {
 
-        // var nameGreet = nameGreet.charAt(0).toUpperCase() + nameGreet.slice(1);
-        nameGreet = nameGreet.toLowerCase();
+        var preparedName = nameGreet.charAt(0).toUpperCase() + nameGreet.slice(1).toLowerCase();
 
-        if (namesGreeted.includes(nameGreet) === false) {
+        if (!namesGreeted.includes(preparedName)) {
 
-            namesGreeted.push(nameGreet);
+            namesGreeted.push(preparedName);
             return true
 
         }
-   
+
     }
 
 
@@ -62,7 +63,7 @@ function Greetings(list) {
 
     function errorMessage(radioBtn, inputType) {
 
-      
+
 
         if (!inputType && !radioBtn) {
 
@@ -95,20 +96,20 @@ function Greetings(list) {
 
     }
 
-    function clearButton(){
+    function clearButton() {
         namesGreeted.length = 0
     }
 
-    function getClearButton (){
+    function getClearButton() {
         return namesGreeted.length
     }
 
 
-    function setClearMsg(){
+    function setClearMsg() {
         clearMsg = "Successfully cleared!"
     }
 
-    function getClearMsg(){
+    function getClearMsg() {
         return clearMsg
     }
 
@@ -125,7 +126,7 @@ function Greetings(list) {
         getClearButton,
         setClearMsg,
         getClearMsg
-        
+
     }
 
 }
